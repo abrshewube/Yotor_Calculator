@@ -1,0 +1,24 @@
+<div class="container mx-auto max-w-md mt-10">
+    <h2 class="text-3xl font-bold mb-4">Molar Mass Calculator</h2>
+  
+    <div class="border rounded-lg p-6 bg-white">
+      <label for="chemicalFormula" class="block text-lg font-medium mb-2">Chemical Formula:</label>
+      <input
+        type="text"
+        id="chemicalFormula"
+        [(ngModel)]="chemicalFormula"
+        class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-500"
+        placeholder="Enter the chemical formula"
+      />
+  
+      <div class="mt-6">
+        <button (click)="calculateMolarMass()" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200">Calculate Molar Mass</button>
+      </div>
+  
+      <div class="mt-8" *ngIf="molarMass !== null">
+        <p class="text-2xl font-bold">Molar Mass:</p>
+        <p class="text-4xl font-bold">{{ molarMass | number:'1.4-4' }} g/mol</p>
+      </div>
+    </div>
+  </div>
+  

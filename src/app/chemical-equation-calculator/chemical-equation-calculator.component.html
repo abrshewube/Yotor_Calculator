@@ -1,0 +1,23 @@
+<div class="container mx-auto max-w-md mt-10">
+    <h2 class="text-2xl font-bold mb-4">Balancing Chemical Equations Calculator</h2>
+  
+    <div>
+      <label for="equation" class="block">Chemical Equation:</label>
+      <input
+        type="text"
+        id="equation"
+        [(ngModel)]="equation"
+        class="w-full px-3 py-2 border rounded"
+        placeholder="Enter the chemical equation"
+      />
+    </div>
+  
+    <div class="mt-6">
+      <button (click)="calculateBalancedEquation()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Calculate Balanced Equation</button>
+    </div>
+  
+    <div class="mt-6">
+      <p *ngIf="balancedEquation">{{ balancedEquation }}</p>
+    </div>
+  </div>
+  

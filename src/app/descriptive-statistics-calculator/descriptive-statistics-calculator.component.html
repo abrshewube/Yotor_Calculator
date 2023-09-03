@@ -1,0 +1,28 @@
+<div class="container mx-auto max-w-md mt-10">
+    <h2 class="text-2xl font-bold mb-4">Descriptive Statistics Calculator</h2>
+  
+    <div>
+      <label for="data" class="block">Data (comma-separated numbers):</label>
+      <input
+        type="text"
+        id="data"
+        [(ngModel)]="data"
+        class="w-full px-3 py-2 border rounded"
+        placeholder="Enter the data (e.g., 1, 2, 3, 4)"
+      />
+    </div>
+  
+    <div class="flex justify-between mt-4">
+      <button (click)="calculateStatistics()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Calculate Statistics</button>
+      <button (click)="resetStatistics()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Reset</button>
+    </div>
+  
+    <div class="mt-6">
+      <p *ngIf="mean !== null">Mean: {{ mean }}</p>
+      <p *ngIf="median !== null">Median: {{ median }}</p>
+      <p *ngIf="mode !== null && mode.length > 0">Mode: {{ mode.join(', ') }}</p>
+      <p *ngIf="variance !== null">Variance: {{ variance }}</p>
+      <p *ngIf="standardDeviation !== null">Standard Deviation: {{ standardDeviation }}</p>
+    </div>
+  </div>
+  

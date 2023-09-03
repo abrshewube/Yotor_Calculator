@@ -1,0 +1,24 @@
+<p>payroll-calculator works!</p>
+<div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-bold mb-2">Payroll Calculator</h2>
+    <div class="mb-4">
+      <label class="block">Hourly Rate:</label>
+      <input type="number" [(ngModel)]="hourlyRate" class="w-40 p-2">
+    </div>
+    <div class="mb-4">
+      <label class="block">Hours Worked:</label>
+      <input type="number" [(ngModel)]="hoursWorked" class="w-40 p-2">
+    </div>
+    <div class="mb-4">
+      <label class="block">Deductions:</label>
+      <input type="number" [(ngModel)]="deductions" class="w-40 p-2">
+    </div>
+    <button (click)="calculatePayroll()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Calculate Payroll</button>
+  
+    <div *ngIf="grossPay !== undefined" class="mt-4">
+      <p class="font-bold">Gross Pay: {{ grossPay | currency: 'USD':'symbol':'1.2-2' }}</p>
+      <p class="font-bold">Taxes: {{ taxes | currency: 'USD':'symbol':'1.2-2' }}</p>
+      <p class="font-bold">Net Pay: {{ netPay | currency: 'USD':'symbol':'1.2-2' }}</p>
+    </div>
+  </div>
+  

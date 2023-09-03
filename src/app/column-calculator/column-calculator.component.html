@@ -1,0 +1,41 @@
+<div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-bold mb-2">Column Calculator</h2>
+  
+    <div class="mb-4">
+      <label class="block mb-2">Column Height (m):</label>
+      <input type="number" [(ngModel)]="height" class="w-40 p-2" placeholder="Column Height">
+    </div>
+  
+    <div class="mb-4">
+      <label class="block mb-2">Column Width (m):</label>
+      <input type="number" [(ngModel)]="width" class="w-40 p-2" placeholder="Column Width">
+    </div>
+  
+    <div class="mb-4">
+      <label class="block mb-2">Column Material:</label>
+      <select [(ngModel)]="material" class="w-40 p-2">
+        <option value="concrete">Concrete</option>
+        <option value="steel">Steel</option>
+      </select>
+    </div>
+  
+    <div class="mb-4" *ngIf="material === 'concrete'">
+      <label class="block mb-2">Concrete Strength (MPa):</label>
+      <input type="number" [(ngModel)]="concreteStrength" class="w-40 p-2" placeholder="Concrete Strength">
+    </div>
+  
+    <div class="mb-4" *ngIf="material === 'steel'">
+      <label class="block mb-2">Steel Strength (MPa):</label>
+      <input type="number" [(ngModel)]="steelStrength" class="w-40 p-2" placeholder="Steel Strength">
+    </div>
+  
+    <button (click)="calculateAxialLoadCapacity()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+      Calculate Axial Load Capacity
+    </button>
+  
+    <div *ngIf="axialLoadCapacity !== undefined" class="mt-4">
+      <p class="font-bold">Results:</p>
+      <p>Axial Load Capacity: {{ axialLoadCapacity }} kN</p>
+    </div>
+  </div>
+  

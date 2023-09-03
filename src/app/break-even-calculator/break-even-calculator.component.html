@@ -1,0 +1,22 @@
+<p>break-even-calculator works!</p>
+<div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-bold mb-2">Break-Even Analysis Calculator</h2>
+    <div class="mb-4">
+      <label class="block">Fixed Costs:</label>
+      <input type="number" [(ngModel)]="fixedCosts" class="w-40 p-2">
+    </div>
+    <div class="mb-4">
+      <label class="block">Variable Costs per Unit:</label>
+      <input type="number" [(ngModel)]="variableCostsPerUnit" class="w-40 p-2">
+    </div>
+    <div class="mb-4">
+      <label class="block">Selling Price per Unit:</label>
+      <input type="number" [(ngModel)]="sellingPricePerUnit" class="w-40 p-2">
+    </div>
+    <button (click)="calculateBreakEven()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Calculate</button>
+  
+    <div *ngIf="breakEvenPoint !== undefined" class="mt-4">
+      <p class="font-bold">Break-Even Point: {{ breakEvenPoint | number: '1.2-2' }} units</p>
+    </div>
+  </div>
+  

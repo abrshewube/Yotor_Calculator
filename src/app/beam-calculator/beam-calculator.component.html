@@ -1,0 +1,25 @@
+<p>beam-calculator works!</p>
+<div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-bold mb-2">Beam Calculator</h2>
+  
+    <div class="mb-4">
+      <label class="block mb-2">Length of Beam (m):</label>
+      <input type="number" [(ngModel)]="length" class="w-40 p-2" placeholder="Length of Beam">
+    </div>
+  
+    <div class="mb-4">
+      <label class="block mb-2">Load on Beam (kN):</label>
+      <input type="number" [(ngModel)]="load" class="w-40 p-2" placeholder="Load on Beam">
+    </div>
+  
+    <button (click)="calculateBendingMomentAndShearForce()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+      Calculate Bending Moment and Shear Force
+    </button>
+  
+    <div *ngIf="bendingMoment !== undefined && shearForce !== undefined" class="mt-4">
+      <p class="font-bold">Results:</p>
+      <p>Bending Moment: {{ bendingMoment }} kNm</p>
+      <p>Shear Force: {{ shearForce }} kN</p>
+    </div>
+  </div>
+  

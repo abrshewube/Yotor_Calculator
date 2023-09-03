@@ -1,0 +1,46 @@
+<p>loan-amortization-calculator works!</p>
+<div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-bold mb-2">Loan Amortization Calculator</h2>
+    <div class="mb-4">
+      <label class="block">Loan Amount:</label>
+      <input type="number" [(ngModel)]="loanAmount" class="w-40 p-2">
+    </div>
+    <div class="mb-4">
+      <label class="block">Interest Rate (% per year):</label>
+      <input type="number" [(ngModel)]="interestRate" class="w-40 p-2">
+    </div>
+    <div class="mb-4">
+      <label class="block">Loan Term (months):</label>
+      <input type="number" [(ngModel)]="loanTerm" class="w-40 p-2">
+    </div>
+    <button (click)="calculateAmortization()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Calculate</button>
+  
+    <div *ngIf="monthlyPayment">
+      <p class="font-bold mt-4">Monthly Payment: {{ monthlyPayment | number: '1.2-2' }}</p>
+      <p class="font-bold">Total Interest Paid: {{ totalInterestPaid | number: '1.2-2' }}</p>
+    </div>
+  
+    <div *ngIf="loanSchedule.length > 0" class="mt-4">
+      <table class="border-collapse border border-gray-800">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-800 px-4 py-2">Month</th>
+            <th class="border border-gray-800 px-4 py-2">Payment</th>
+            <th class="border border-gray-800 px-4 py-2">Principal</th>
+            <th class="border border-gray-800 px-4 py-2">Interest</th>
+            <th class="border border-gray-800 px-4 py-2">Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of loanSchedule">
+            <td class="border border-gray-800 px-4 py-2">{{ entry.month }}</td>
+            <td class="border border-gray-800 px-4 py-2">{{ entry.payment | number: '1.2-2' }}</td>
+            <td class="border border-gray-800 px-4 py-2">{{ entry.principal | number: '1.2-2' }}</td>
+            <td class="border border-gray-800 px-4 py-2">{{ entry.interest | number: '1.2-2' }}</td>
+            <td class="border border-gray-800 px-4 py-2">{{ entry.balance | number: '1.2-2' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

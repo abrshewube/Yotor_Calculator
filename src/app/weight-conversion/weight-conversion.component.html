@@ -1,0 +1,27 @@
+<div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-bold mb-2">Weight Conversion Calculator</h2>
+    <label class="block mb-2">Enter value:</label>
+    <input type="number" [(ngModel)]="inputValue" class="w-40 p-2 mb-2" placeholder="Enter value">
+    
+    <label class="block mb-2">From:</label>
+    <select [(ngModel)]="selectedFromUnit" class="w-40 p-2 mb-2">
+      <option value="kilograms">Kilograms</option>
+      <option value="pounds">Pounds</option>
+      <option value="ounces">Ounces</option>
+    </select>
+    
+    <label class="block mb-2">To:</label>
+    <select [(ngModel)]="selectedToUnit" class="w-40 p-2 mb-2">
+      <option value="kilograms">Kilograms</option>
+      <option value="pounds">Pounds</option>
+      <option value="ounces">Ounces</option>
+    </select>
+    
+    <button (click)="convert()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Convert</button>
+    
+    <div *ngIf="result !== undefined" class="mt-4">
+      <p class="font-bold">Result:</p>
+      <p>{{ inputValue }} {{ selectedFromUnit }} is equal to {{ result | number: '1.2-2' }} {{ selectedToUnit }}</p>
+    </div>
+  </div>
+  

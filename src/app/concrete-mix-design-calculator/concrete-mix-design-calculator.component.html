@@ -1,0 +1,27 @@
+<p>concrete-mix-design-calculator works!</p>
+<div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-bold mb-2">Concrete Mix Design Calculator</h2>
+    
+    <div class="mb-4">
+      <label class="block mb-2">Desired Strength (MPa):</label>
+      <input type="number" [(ngModel)]="desiredStrength" class="w-40 p-2" placeholder="Desired Strength">
+    </div>
+  
+    <div class="mb-4">
+      <label class="block mb-2">Water-Cement Ratio:</label>
+      <input type="number" [(ngModel)]="waterCementRatio" class="w-40 p-2" placeholder="Water-Cement Ratio">
+    </div>
+  
+    <button (click)="calculateMixDesign()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+      Calculate Mix Design
+    </button>
+  
+    <div *ngIf="mixDesignResult" class="mt-4">
+      <p class="font-bold">Mix Design Result:</p>
+      <p>Cement: {{ mixDesignResult.cement }} kg</p>
+      <p>Water: {{ mixDesignResult.water }} kg</p>
+      <p>Sand: {{ mixDesignResult.sand }} kg</p>
+      <p>Coarse Aggregate: {{ mixDesignResult.coarseAggregate }} kg</p>
+    </div>
+  </div>
+  

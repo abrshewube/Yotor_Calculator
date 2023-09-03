@@ -1,0 +1,27 @@
+<div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-bold mb-2">Length Conversion Calculator</h2>
+    <label class="block mb-2">Enter length:</label>
+    <input type="number" [(ngModel)]="inputValue" class="w-40 p-2 mb-2" placeholder="Length">
+    <div class="flex items-center mb-2">
+      <span class="mr-2">From:</span>
+      <select [(ngModel)]="selectedFromUnit" class="w-20 p-2">
+        <option value="meters">Meters</option>
+        <option value="feet">Feet</option>
+        <option value="inches">Inches</option>
+      </select>
+    </div>
+    <div class="flex items-center mb-4">
+      <span class="mr-2">To:</span>
+      <select [(ngModel)]="selectedToUnit" class="w-20 p-2">
+        <option value="meters">Meters</option>
+        <option value="feet">Feet</option>
+        <option value="inches">Inches</option>
+      </select>
+    </div>
+    <button (click)="convert()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Convert</button>
+    <div *ngIf="result !== undefined" class="mt-4">
+      <p class="font-bold">Result:</p>
+      <p>{{ inputValue }} {{ selectedFromUnit }} is equal to {{ result | number: '1.2-2' }} {{ selectedToUnit }}.</p>
+    </div>
+  </div>
+  

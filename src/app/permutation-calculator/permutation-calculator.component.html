@@ -1,0 +1,13 @@
+<div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-bold mb-2">Permutation Calculator</h2>
+    <label class="block mb-2">Enter total number of objects (n):</label>
+    <input type="number" [(ngModel)]="totalObjects" class="w-40 p-2 mb-2" placeholder="Total Objects">
+    <label class="block mb-2">Enter number of objects to arrange (r):</label>
+    <input type="number" [(ngModel)]="arrangeObjects" class="w-40 p-2 mb-2" placeholder="Objects to Arrange">
+    <button (click)="calculatePermutation()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Calculate Permutation</button>
+    <div *ngIf="permutationResult !== undefined" class="mt-4">
+      <p class="font-bold">Result:</p>
+      <p>Permutation: {{ permutationResult | number: '1.0-0' }}</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,37 @@
+<div class="container mx-auto mt-4">
+    <h2 class="text-2xl font-bold mb-2">Retaining Wall Calculator</h2>
+  
+    <div class="mb-4">
+      <label class="block mb-2">Wall Height (m):</label>
+      <input type="number" [(ngModel)]="wallHeight" class="w-40 p-2" placeholder="Wall Height">
+    </div>
+  
+    <div class="mb-4">
+      <label class="block mb-2">Wall Width (m):</label>
+      <input type="number" [(ngModel)]="wallWidth" class="w-40 p-2" placeholder="Wall Width">
+    </div>
+  
+    <div class="mb-4">
+      <label class="block mb-2">Soil Properties:</label>
+      <select [(ngModel)]="soilType" class="w-40 p-2">
+        <option value="clay">Clay</option>
+        <option value="sand">Sand</option>
+        <option value="gravel">Gravel</option>
+      </select>
+    </div>
+  
+    <div class="mb-4">
+      <label class="block mb-2">Load on Wall (kN/m2):</label>
+      <input type="number" [(ngModel)]="loadOnWall" class="w-40 p-2" placeholder="Load on Wall">
+    </div>
+  
+    <button (click)="calculateWallDesign()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+      Calculate Wall Design
+    </button>
+  
+    <div *ngIf="wallDesign !== undefined" class="mt-4">
+      <p class="font-bold">Results:</p>
+      <p>Wall Design: {{ wallDesign }}</p>
+    </div>
+  </div>
+  
