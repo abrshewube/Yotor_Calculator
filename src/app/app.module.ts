@@ -42,10 +42,9 @@ import { BreakEvenCalculatorComponent } from './break-even-calculator/break-even
 import { NpvCalculatorComponent } from './npv-calculator/npv-calculator.component';
 import { PayrollCalculatorComponent } from './payroll-calculator/payroll-calculator.component';
 import { CurrencyConversionCalculatorComponent } from './currency-conversion-calculator/currency-conversion-calculator.component';
-import { EconomicsComponent } from './economics/economics.component';
-import { InflationCalculatorComponent } from './economics/inflation-calculator/inflation-calculator.component';
-
-
+import { InflationCalculatorComponent } from './inflation-calculator/inflation-calculator.component';
+import { InterestRateCalculatorComponent } from './interest-rate-calculator/interest-rate-calculator.component';
+import { GdpCalculatorComponent } from './gdp-calculator/gdp-calculator.component';
 
 @NgModule({
   declarations: [
@@ -88,9 +87,11 @@ import { InflationCalculatorComponent } from './economics/inflation-calculator/i
      NpvCalculatorComponent,
      PayrollCalculatorComponent,
      CurrencyConversionCalculatorComponent,
-     EconomicsComponent,
      InflationCalculatorComponent,
-   
+     InterestRateCalculatorComponent,
+     GdpCalculatorComponent,
+     
+     
 
     
     
