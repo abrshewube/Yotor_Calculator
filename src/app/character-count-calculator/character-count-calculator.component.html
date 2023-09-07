@@ -1,0 +1,19 @@
+<div class="bg-white p-6 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-semibold text-center mb-6 text-blue-600">Character Count Calculator</h1>
+    <textarea
+      [(ngModel)]="inputText"
+      class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
+      placeholder="Enter your text here..."
+      rows="5"
+    ></textarea>
+    <button
+      (click)="countCharacters()"
+      class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-4 transition duration-300"
+    >
+      Count Characters
+    </button>
+    <div *ngIf="charCount !== undefined" class="mt-6">
+      <p class="text-2xl font-semibold text-center text-green-600">Character Count: {{ charCount }}</p>
+    </div>
+  </div>
+  

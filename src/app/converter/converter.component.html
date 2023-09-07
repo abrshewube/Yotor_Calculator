@@ -1,0 +1,30 @@
+<div class="container mx-auto mt-8 p-4 bg-green-100 rounded-lg shadow-lg">
+  <h2 class="text-2xl font-bold mb-4">Number Converter</h2>
+  <div class="mb-4">
+    <label class="block text-gray-700 mb-2">Enter the number to be converted:</label>
+    <input [(ngModel)]="number" class="w-60 p-2 rounded-md border border-gray-300" placeholder="Enter a number">
+  </div>
+  <div class="mb-4">
+    <label class="block text-gray-700 mb-2">Source Base:</label>
+    <select [(ngModel)]="sourceBase" class="w-60 p-2 rounded-md border border-gray-300">
+      <option value="binary">Binary</option>
+      <option value="decimal">Decimal</option>
+      <option value="hexadecimal">Hexadecimal</option>
+    </select>
+  </div>
+  <div class="mb-4">
+    <label class="block text-gray-700 mb-2">Target Base:</label>
+    <select [(ngModel)]="targetBase" class="w-60 p-2 rounded-md border border-gray-300">
+      <option value="binary">Binary</option>
+      <option value="decimal">Decimal</option>
+      <option value="hexadecimal">Hexadecimal</option>
+    </select>
+  </div>
+  <button (click)="convert()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">
+    Convert
+  </button>
+  <div *ngIf="result !== null" class="mt-4">
+    <p class="font-bold">Result:</p>
+    <p class="bg-gray-100 p-2 rounded-md">{{ result }}</p>
+  </div>
+</div>

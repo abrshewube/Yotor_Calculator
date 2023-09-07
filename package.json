@@ -22,6 +22,7 @@
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
     "chart.js": "^4.3.2",
+    "grammarkdown": "^3.3.2",
     "mathjs": "^11.9.1",
     "mathjs-simple-integral": "^0.1.1",
     "postcss": "^8.4.27",

@@ -45,6 +45,10 @@ import { CurrencyConversionCalculatorComponent } from './currency-conversion-cal
 import { InflationCalculatorComponent } from './inflation-calculator/inflation-calculator.component';
 import { InterestRateCalculatorComponent } from './interest-rate-calculator/interest-rate-calculator.component';
 import { GdpCalculatorComponent } from './gdp-calculator/gdp-calculator.component';
+import { WordCountCalculatorComponent } from './word-count-calculator/word-count-calculator.component';
+import { CharacterCountCalculatorComponent } from './character-count-calculator/character-count-calculator.component';
+import { ConverterComponent } from './converter/converter.component';
+import { SubnetCalculatorComponent } from './subnet-calculator/subnet-calculator.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +94,11 @@ import { GdpCalculatorComponent } from './gdp-calculator/gdp-calculator.componen
      InflationCalculatorComponent,
      InterestRateCalculatorComponent,
      GdpCalculatorComponent,
+     WordCountCalculatorComponent,
+     CharacterCountCalculatorComponent,
+     ConverterComponent,
+     SubnetCalculatorComponent,
+     
      
      
 
