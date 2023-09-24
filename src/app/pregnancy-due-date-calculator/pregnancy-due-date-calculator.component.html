@@ -1,17 +1,20 @@
-<p>pregnancy-due-date-calculator works!</p>
-<div class="container mx-auto mt-4">
-    <h2 class="text-2xl font-bold mb-4">Pregnancy Due Date Calculator</h2>
-  
-    <div class="mb-4">
-      <label class="block mb-2">Enter Last Menstrual Period:</label>
-      <input type="date" [(ngModel)]="lastMenstrualPeriod" class="w-40 p-2" placeholder="Last Menstrual Period">
-    </div>
-  
-    <button (click)="calculateDueDate()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Calculate Due Date</button>
-  
+<div class="container mx-auto mt-4" style="background: linear-gradient(45deg, #FF6B6B, #FFE66D, #45B649, #22A6B3, #886AEA);">
+  <h2 class="text-3xl font-bold mb-4">Pregnancy Due Date Calculator</h2>
+
+  <div class="bg-white rounded-lg shadow-md p-6">
+    <label for="lastMenstrualPeriod" class="block text-lg font-medium mb-2">Enter Last Menstrual Period:</label>
+    <input
+      type="date"
+      [(ngModel)]="lastMenstrualPeriod"
+      class="w-40 p-2 border rounded focus:outline-none focus:ring focus:border-blue-500"
+      placeholder="Last Menstrual Period"
+    />
+    <br><br>
+    <button (click)="calculateDueDate()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition-colors duration-300">Calculate Due Date</button>
+
     <div *ngIf="dueDate" class="mt-4">
-      <p class="font-bold">Estimated Due Date:</p>
-      <p>{{ dueDate | date: 'mediumDate' }}</p>
+      <p class="text-2xl font-bold">Estimated Due Date:</p>
+      <p class="text-2xl">{{ dueDate | date: 'mediumDate' }}</p>
     </div>
   </div>
-  
+</div>

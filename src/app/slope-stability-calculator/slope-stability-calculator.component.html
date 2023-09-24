@@ -1,38 +1,36 @@
-<p>slope-stability-calculator works!</p>
-<div class="container mx-auto mt-4">
-    <h2 class="text-2xl font-bold mb-2">Slope Stability Calculator</h2>
-  
-    <div class="mb-4">
-      <label class="block mb-2">Slope Angle (degrees):</label>
-      <input type="number" [(ngModel)]="slopeAngle" class="w-40 p-2" placeholder="Slope Angle">
-    </div>
-  
-    <div class="mb-4">
-      <label class="block mb-2">Soil Properties:</label>
-      <select [(ngModel)]="soilType" class="w-40 p-2">
-        <option value="clay">Clay</option>
-        <option value="sand">Sand</option>
-        <option value="gravel">Gravel</option>
-      </select>
-    </div>
-  
-    <div class="mb-4">
-      <label class="block mb-2">Cohesion (kPa):</label>
-      <input type="number" [(ngModel)]="cohesion" class="w-40 p-2" placeholder="Cohesion">
-    </div>
-  
-    <div class="mb-4">
-      <label class="block mb-2">Angle of Internal Friction (degrees):</label>
-      <input type="number" [(ngModel)]="angleOfFriction" class="w-40 p-2" placeholder="Angle of Internal Friction">
-    </div>
-  
-    <button (click)="evaluateStability()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-      Evaluate Slope Stability
-    </button>
-  
-    <div *ngIf="stabilityResult !== undefined" class="mt-4">
-      <p class="font-bold">Stability Evaluation:</p>
-      <p>{{ stabilityResult }}</p>
-    </div>
+<div class="container mx-auto mt-4" style="background: linear-gradient(45deg, #FF0000, #FFFF00, #008000);">
+  <h2 class="text-2xl font-bold mb-2">Slope Stability Calculator</h2>
+
+  <div class="mb-4">
+    <label class="block mb-2">Slope Angle (degrees):</label>
+    <input type="number" [(ngModel)]="slopeAngle" class="w-40 p-2 border rounded" placeholder="Slope Angle">
   </div>
-  
+
+  <div class="mb-4">
+    <label class="block mb-2">Soil Properties:</label>
+    <select [(ngModel)]="soilType" class="w-40 p-2 border rounded">
+      <option value="clay">Clay</option>
+      <option value="sand">Sand</option>
+      <option value="gravel">Gravel</option>
+    </select>
+  </div>
+
+  <div class="mb-4">
+    <label class="block mb-2">Cohesion (kPa):</label>
+    <input type="number" [(ngModel)]="cohesion" class="w-40 p-2 border rounded" placeholder="Cohesion">
+  </div>
+
+  <div class="mb-4">
+    <label class="block mb-2">Angle of Internal Friction (degrees):</label>
+    <input type="number" [(ngModel)]="angleOfFriction" class="w-40 p-2 border rounded" placeholder="Angle of Internal Friction">
+  </div>
+
+  <button (click)="evaluateStability()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition-colors duration-300">
+    Evaluate Slope Stability
+  </button>
+
+  <div *ngIf="stabilityResult !== undefined" class="mt-4">
+    <p class="font-bold">Stability Evaluation:</p>
+    <p>{{ stabilityResult }}</p>
+  </div>
+</div>

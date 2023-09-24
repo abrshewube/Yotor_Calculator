@@ -62,3 +62,4 @@ export class DeterminantCalculatorComponent {
     this.matrixData = this.getInitialMatrixData();
   }
 }
+

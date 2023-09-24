@@ -1,0 +1,65 @@
+<!-- <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+    <h2 class="text-3xl font-bold text-center text-blue-700 mb-6">Bitwise Calculator</h2>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-lg mb-2">Enter Number 1:</label>
+        <input type="number" [(ngModel)]="number1" class="w-full p-3 bg-white text-gray-800 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+      </div>
+      
+      <div>
+        <label class="block text-lg mb-2">Enter Number 2:</label>
+        <input type="number" [(ngModel)]="number2" class="w-full p-3 bg-white text-gray-800 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+      </div>
+    </div>
+  
+    <div class="mt-4 flex justify-center space-x-2">
+      <button (click)="performBitwiseAnd()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Bitwise AND</button>
+      <button (click)="performBitwiseOr()" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">Bitwise OR</button>
+      <button (click)="performBitwiseXor()" class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded-md">Bitwise XOR</button>
+      <button (click)="performBitwiseNot()" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md">Bitwise NOT</button>
+    </div>
+  
+    <div *ngIf="result !== undefined" class="mt-6">
+      <p class="text-xl font-semibold mb-2">Result:</p>
+      <p class="text-2xl text-blue-700">{{ result }}</p>
+    </div>
+  </div>
+   -->
+
+   <div class="p-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg shadow-xl">
+    <h2 class="text-4xl font-bold text-center text-white mb-6">Bitwise Calculator</h2>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-2xl mb-2 text-white">Enter Number 1:</label>
+        <input
+          type="number"
+          [(ngModel)]="number1"
+          class="w-full p-4 bg-white text-gray-800 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+        >
+      </div>
+  
+      <div>
+        <label class="block text-2xl mb-2 text-white">Enter Number 2:</label>
+        <input
+          type="number"
+          [(ngModel)]="number2"
+          class="w-full p-4 bg-white text-gray-800 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+        >
+      </div>
+    </div>
+  
+    <div class="mt-8 flex justify-center space-x-2">
+      <button (click)="performBitwiseAnd()" class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-md shadow-md">Bitwise AND</button>
+      <button (click)="performBitwiseOr()" class="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-md shadow-md">Bitwise OR</button>
+      <button (click)="performBitwiseXor()" class="bg-yellow-500 hover:bg-yellow-600 text-white py-3 px-6 rounded-md shadow-md">Bitwise XOR</button>
+      <button (click)="performBitwiseNot()" class="bg-red-500 hover:bg-red-600 text-white py-3 px-6 rounded-md shadow-md">Bitwise NOT</button>
+    </div>
+  
+    <div *ngIf="result !== undefined" class="mt-8">
+      <p class="text-3xl font-semibold mb-2 text-white">Result:</p>
+      <p class="text-4xl text-yellow-300">{{ result }}</p>
+    </div>
+  </div>
+  

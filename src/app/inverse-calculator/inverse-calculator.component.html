@@ -1,32 +1,34 @@
-<div class="container mx-auto p-4 bg-white rounded-lg shadow">
-    <h2 class="text-2xl font-bold mb-4">Inverse of Matrix Calculator</h2>
-    <div class="mb-4">
-      <label class="block font-bold">Matrix Order:</label>
-      <select [(ngModel)]="matrixOrder" (change)="updateMatrixData()" class="w-16 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring focus:border-blue-300">
-        <option value="2">2x2</option>
-        <option value="3">3x3</option>
-        <option value="4">4x4</option>
-        <!-- Add more options as needed for larger matrix orders -->
-      </select>
-    </div>
-    <div class="mb-4">
-      <label class="block font-bold">Enter Matrix Elements:</label>
-      <table class="border-collapse border border-gray-300">
-        <tr *ngFor="let row of matrixData; let i = index">
-          <td *ngFor="let cell of row; let j = index">
-            <input [(ngModel)]="matrixData[i][j]" type="number" class="w-12 p-1 text-center border border-gray-300 focus:outline-none focus:ring focus:border-blue-300">
-          </td>
-        </tr>
-      </table>
-    </div>
-    <button (click)="calculateInverse()" class="px-4 py-2 bg-blue-500 text-white rounded-md focus:outline-none hover:bg-blue-600">Calculate Inverse</button>
-    <div *ngIf="inverseMatrix" class="mt-4">
-      <p class="font-bold">The inverse of the matrix is:</p>
-      <table class="border-collapse border border-gray-300 mt-2">
-        <tr *ngFor="let row of inverseMatrix">
-          <td *ngFor="let cell of row" class="w-12 p-1 text-center border border-gray-300">{{ cell }}</td>
-        </tr>
-      </table>
-    </div>
+<div class="container mx-auto p-4 bg-blue-300 rounded-lg shadow hover:shadow-lg transition duration-300">
+  <h2 class="text-2xl font-bold mb-4">Inverse of Matrix Calculator</h2>
+  <div class="mb-4">
+    <label class="block font-bold">Matrix Order:</label>
+    <select [(ngModel)]="matrixOrder" (change)="updateMatrixData()" class="w-16 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring focus:border-blue-300">
+      <option value="2">2x2</option>
+      <option value="3">3x3</option>
+      <option value="4">4x4</option>
+      <option value="4">5x5</option>
+      <option value="4">6x6</option>
+      <!-- Add more options as needed for larger matrix orders -->
+    </select>
   </div>
-  
+  <div class="mb-4">
+    <label class="block font-bold">Enter Matrix Elements:</label>
+    <table class="border-collapse border border-gray-300">
+      <tr *ngFor="let row of matrixData; let i = index">
+        <td *ngFor="let cell of row; let j = index">
+          <input [(ngModel)]="matrixData[i][j]" type="number" class="w-12 p-1 text-center border border-gray-300 focus:outline-none focus:ring focus:border-blue-300">
+        </td>
+      </tr>
+    </table>
+  </div>
+  <button (click)="calculateInverse()" class="px-4 py-2 bg-red-500 text-white rounded-md focus:outline-none hover:bg-blue-600 transition duration-300 transform hover:scale-105">Calculate Inverse</button>
+  <div *ngIf="inverseMatrix" class="mt-4">
+    <p class="font-bold">The inverse of the matrix is:</p>
+    <table class="border-collapse border border-gray-300 mt-2">
+      <tr *ngFor="let row of inverseMatrix">
+        <td *ngFor="let cell of row" class="w-12 p-1 text-center border border-gray-300">{{ cell }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+

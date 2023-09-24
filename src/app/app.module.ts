@@ -49,6 +49,20 @@ import { WordCountCalculatorComponent } from './word-count-calculator/word-count
 import { CharacterCountCalculatorComponent } from './character-count-calculator/character-count-calculator.component';
 import { ConverterComponent } from './converter/converter.component';
 import { SubnetCalculatorComponent } from './subnet-calculator/subnet-calculator.component';
+import { BitwiseCalculatorComponent } from './bitwise-calculator/bitwise-calculator.component';
+import { RandomNumberGeneratorComponent } from './random-number-generator/random-number-generator.component';
+import { TimeZoneConverterComponent } from './time-zone-converter/time-zone-converter.component';
+import { ScientificCalculatorComponent } from './scientific-calculator/scientific-calculator.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { FooterComponent } from './footer/footer.component';
+import { MainhomeComponent } from './mainhome/mainhome.component';
+import { NewPageComponent } from './new-page/new-page.component';
+import { EngineerComponent } from './engineer/engineer.component';
+import { MeasureComponent } from './measure/measure.component';
+import { BusinessComponent } from './business/business.component';
+import { ChemoComponent } from './chemo/chemo.component';
+import { EconomicsComponent } from './economics/economics.component';
+import { HeroComponent } from './hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +112,21 @@ import { SubnetCalculatorComponent } from './subnet-calculator/subnet-calculator
      CharacterCountCalculatorComponent,
      ConverterComponent,
      SubnetCalculatorComponent,
+     BitwiseCalculatorComponent,
+     RandomNumberGeneratorComponent,
+     TimeZoneConverterComponent,
+     ScientificCalculatorComponent,
+     HomepageComponent,
+     FooterComponent,
+     MainhomeComponent,
+     NewPageComponent,
+     EngineerComponent,
+     MeasureComponent,
+     BusinessComponent,
+     ChemoComponent,
+     EconomicsComponent,
+     HeroComponent,
+    
      
      
      

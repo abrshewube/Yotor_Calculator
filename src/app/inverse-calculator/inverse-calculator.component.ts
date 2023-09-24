@@ -24,7 +24,7 @@ export class InverseCalculatorComponent {
       this.inverseMatrix = this.getInverse(this.matrixData);
     } catch (error) {
       this.inverseMatrix = null;
-      alert(' error');
+      alert(' The determinant of the matrix is zero. The inverse does not exist.');
     }
   }
 

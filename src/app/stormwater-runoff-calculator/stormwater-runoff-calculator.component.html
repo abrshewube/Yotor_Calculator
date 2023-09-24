@@ -1,19 +1,17 @@
-<p>stormwater-runoff-calculator works!</p>
-<div class="container mx-auto mt-4">
-    <h2 class="text-2xl font-bold mb-2">Stormwater Runoff Calculator</h2>
-  
-    <div class="mb-4">
-      <label class="block mb-2">Area (in square meters):</label>
-      <input type="number" [(ngModel)]="area" class="w-40 p-2" placeholder="Area">
-    </div>
-  
-    <button (click)="calculateRunoff()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-      Calculate Runoff
-    </button>
-  
-    <div *ngIf="runoffVolume !== undefined" class="mt-4">
-      <p class="font-bold">Runoff Volume (in cubic meters):</p>
-      <p>{{ runoffVolume }}</p>
-    </div>
+<div class="container mx-auto mt-4 flex flex-col items-center" style="background: linear-gradient(45deg, #FF0000, #FFFF00, #008000);">
+  <h2 class="text-2xl font-bold mb-2">Stormwater Runoff Calculator</h2>
+
+  <div class="mb-4">
+    <label class="block mb-2 text-gray-900">Area (in square meters):</label>
+    <input type="number" [(ngModel)]="area" class="w-40 p-2 border rounded" placeholder="Area">
   </div>
-  
+
+  <button (click)="calculateRunoff()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition-colors duration-300">
+    Calculate Runoff
+  </button>
+
+  <div *ngIf="runoffVolume !== undefined" class="mt-4">
+    <p class="font-bold text-gray-900">Runoff Volume (in cubic meters):</p>
+    <p>{{ runoffVolume }}</p>
+  </div>
+</div>

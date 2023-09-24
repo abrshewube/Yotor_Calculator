@@ -1,27 +1,36 @@
 <div class="container mx-auto mt-4">
+  <div class="card bg-blue-200 p-4 mb-4">
     <h2 class="text-2xl font-bold mb-2">Time Conversion Calculator</h2>
-    <label class="block mb-2">Enter value:</label>
-    <input type="number" [(ngModel)]="inputValue" class="w-40 p-2 mb-2" placeholder="Enter value">
+    <div class="card bg-white p-4 mb-4">
+      <label class="block mb-2 text-blue-600">Enter value:</label>
+      <input type="number" [(ngModel)]="inputValue" class="w-40 p-2 mb-2 border border-blue-300 rounded" placeholder="Enter value">
+    </div>
     
-    <label class="block mb-2">From:</label>
-    <select [(ngModel)]="selectedFromUnit" class="w-40 p-2 mb-2">
-      <option value="seconds">Seconds</option>
-      <option value="minutes">Minutes</option>
-      <option value="hours">Hours</option>
-    </select>
+    <div class="card bg-white p-4 mb-4">
+      <label class="block mb-2 text-blue-600">From:</label>
+      <select [(ngModel)]="selectedFromUnit" class="w-40 p-2 mb-2 border border-blue-300 rounded">
+        <option value="seconds">Seconds</option>
+        <option value="minutes">Minutes</option>
+        <option value="hours">Hours</option>
+      </select>
+    </div>
     
-    <label class="block mb-2">To:</label>
-    <select [(ngModel)]="selectedToUnit" class="w-40 p-2 mb-2">
-      <option value="seconds">Seconds</option>
-      <option value="minutes">Minutes</option>
-      <option value="hours">Hours</option>
-    </select>
+    <div class="card bg-white p-4 mb-4">
+      <label class="block mb-2 text-blue-600">To:</label>
+      <select [(ngModel)]="selectedToUnit" class="w-40 p-2 mb-2 border border-blue-300 rounded">
+        <option value="seconds">Seconds</option>
+        <option value="minutes">Minutes</option>
+        <option value="hours">Hours</option>
+      </select>
+    </div>
     
-    <button (click)="convert()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Convert</button>
+    <div class="card bg-white p-4 mb-4">
+      <button (click)="convert()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition-colors duration-300">Convert</button>
+    </div>
     
-    <div *ngIf="result !== undefined" class="mt-4">
-      <p class="font-bold">Result:</p>
+    <div *ngIf="result !== undefined" class="card bg-white p-4 mb-4">
+      <p class="font-bold text-blue-600">Result:</p>
       <p>{{ inputValue }} {{ selectedFromUnit }} is equal to {{ result | number: '1.2-2' }} {{ selectedToUnit }}</p>
     </div>
   </div>
-  
+</div>

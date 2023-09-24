@@ -1,23 +1,21 @@
-<p>investment-return-calculator works!</p>
-<div class="container mx-auto mt-4">
-    <h2 class="text-2xl font-bold mb-2">Investment Return Calculator</h2>
-    <div class="mb-4">
-      <label class="block">Initial Investment:</label>
-      <input type="number" [(ngModel)]="initialInvestment" class="w-40 p-2">
-    </div>
-    <div class="mb-4">
-      <label class="block">Annual Interest Rate (%):</label>
-      <input type="number" [(ngModel)]="annualInterestRate" class="w-40 p-2">
-    </div>
-    <div class="mb-4">
-      <label class="block">Investment Duration (years):</label>
-      <input type="number" [(ngModel)]="investmentDuration" class="w-40 p-2">
-    </div>
-    <button (click)="calculateReturn()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Calculate</button>
-  
-    <div *ngIf="futureValue !== undefined" class="mt-4">
-      <p class="font-bold">Future Value: {{ futureValue | number: '1.2-2' }}</p>
-      <p class="font-bold">Total Return: {{ totalReturn | number: '1.2-2' }}</p>
-    </div>
+<div class="container mx-auto mt-4 bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600 p-4 text-white rounded-lg shadow">
+  <h2 class="text-2xl font-bold mb-2">Investment Return Calculator</h2>
+  <div class="mb-4">
+    <label class="block">Initial Investment:</label>
+    <input type="number" [(ngModel)]="initialInvestment" class="w-40 p-2">
   </div>
-  
+  <div class="mb-4">
+    <label class="block">Annual Interest Rate (%):</label>
+    <input type="number" [(ngModel)]="annualInterestRate" class="w-40 p-2">
+  </div>
+  <div class="mb-4">
+    <label class="block">Investment Duration (years):</label>
+    <input type="number" [(ngModel)]="investmentDuration" class="w-40 p-2">
+  </div>
+  <button (click)="calculateReturn()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Calculate</button>
+
+  <div *ngIf="futureValue !== undefined" class="mt-4">
+    <p class="font-bold">Future Value: {{ futureValue | number: '1.2-2' }}</p>
+    <p class="font-bold">Total Return: {{ totalReturn | number: '1.2-2' }}</p>
+  </div>
+</div>

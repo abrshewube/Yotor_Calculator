@@ -1,28 +1,33 @@
-<div class="container mx-auto mt-4">
-    <h2 class="text-2xl font-bold mb-4">GPA Calculator</h2>
-  
-    <div class="mb-4">
-      <label for="numCourses">Number of Courses:</label>
-      <input type="number" id="numCourses" [(ngModel)]="numCourses" class="w-20 p-2" min="1">
-      <button (click)="updateCourses()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded ml-2">Update</button>
-    </div>
-  
-    <form (ngSubmit)="calculateGPA()" *ngIf="numCourses > 0">
-      <div *ngFor="let course of courses; let i = index" class="mb-4">
-        <label for="creditHours{{i}}">Course {{i + 1}} Credit Hours:</label>
-        <input type="number" id="creditHours{{i}}" [(ngModel)]="course.creditHours" class="w-20 p-2" min="1" name="creditHours{{i}}">
-        <label for="grade{{i}}" class="ml-4">Grade:</label>
-        <select id="grade{{i}}" [(ngModel)]="course.grade" class="w-20 p-2" name="grade{{i}}">
-          <option *ngFor="let grade of grades" [value]="grade.value">{{ grade.name }}</option>
-        </select>
+<div class="container mx-auto mt-4 bg-white p-6 rounded-lg shadow-lg">
+  <h2 class="text-2xl font-bold mb-4 text-blue-600">GPA Calculator</h2>
+
+  <div class="mb-4">
+      <label for="numCourses" class="text-lg font-medium text-gray-700">Number of Courses:</label>
+      <div class="flex">
+          <input type="number" id="numCourses" [(ngModel)]="numCourses" class="w-20 p-2 border rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-300" min="1">
+          <button (click)="updateCourses()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md ml-2 transition duration-300">Add</button>
       </div>
-  
-      <button type="submit" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">Calculate GPA</button>
-    </form>
-  
-    <div *ngIf="gpa !== null" class="mt-4">
-      <p class="font-bold">Your GPA:</p>
-      <p>{{ gpa | number: '1.2-2' }}</p>
-    </div>
   </div>
-  
+
+  <form (ngSubmit)="calculateGPA()" *ngIf="numCourses > 0">
+      <div *ngFor="let course of courses; let i = index" class="mb-4">
+          <div class="flex items-center">
+              <label for="creditHours{{i}}" class="text-lg font-medium text-gray-700">Course {{i + 1}} Credit Hours:</label>
+              <input type="number" id="creditHours{{i}}" [(ngModel)]="course.creditHours" class="w-20 p-2 border rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-300 ml-2" min="1" name="creditHours{{i}}">
+          </div>
+          <div class="flex items-center mt-2">
+              <label for="grade{{i}}" class="text-lg font-medium text-gray-700 ml-4">Grade:</label>
+              <select id="grade{{i}}" [(ngModel)]="course.grade" class="w-20 p-2 border rounded-md border-gray-300 focus:outline-none focus:ring focus:border-blue-300 ml-2" name="grade{{i}}">
+                  <option *ngFor="let grade of grades" [value]="grade.value">{{ grade.name }}</option>
+              </select>
+          </div>
+      </div>
+
+      <button type="submit" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md transition duration-300">Calculate GPA</button>
+  </form>
+
+  <div *ngIf="gpa !== null" class="mt-4">
+      <p class="text-xl font-semibold text-green-600">Your GPA:</p>
+      <p class="text-3xl text-blue-600">{{ gpa | number: '1.2-2' }}</p>
+  </div>
+</div>

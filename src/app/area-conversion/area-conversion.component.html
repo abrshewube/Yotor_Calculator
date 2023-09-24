@@ -1,4 +1,4 @@
-<div class="container mx-auto mt-4">
+<!-- <div class="container mx-auto mt-4">
     <h2 class="text-2xl font-bold mb-2">Area Conversion Calculator</h2>
     <label class="block mb-2">Enter value:</label>
     <input type="number" [(ngModel)]="inputValue" class="w-40 p-2 mb-2" placeholder="Enter value">
@@ -22,6 +22,51 @@
     <div *ngIf="result !== undefined" class="mt-4">
       <p class="font-bold">Result:</p>
       <p>{{ inputValue }} {{ selectedFromUnit }} is equal to {{ result | number: '1.2-2' }} {{ selectedToUnit }}</p>
+    </div>
+  </div>
+   -->
+
+   <div class="container mx-auto mt-8 p-4 bg-gray-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold mb-4 text-blue-600">Area Conversion Calculator</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="mb-4">
+        <label for="inputValue" class="block text-sm font-semibold text-gray-700">Enter value:</label>
+        <input
+          type="number"
+          [(ngModel)]="inputValue"
+          id="inputValue"
+          class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-400"
+          placeholder="Enter value"
+        >
+      </div>
+      
+      <div class="mb-4">
+        <label for="fromUnit" class="block text-sm font-semibold text-gray-700">From:</label>
+        <select [(ngModel)]="selectedFromUnit" id="fromUnit" class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-400">
+          <option value="square-meters">Square Meters</option>
+          <option value="square-feet">Square Feet</option>
+          <option value="acres">Acres</option>
+        </select>
+      </div>
+      
+      <div class="mb-4">
+        <label for="toUnit" class="block text-sm font-semibold text-gray-700">To:</label>
+        <select [(ngModel)]="selectedToUnit" id="toUnit" class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-400">
+          <option value="square-meters">Square Meters</option>
+          <option value="square-feet">Square Feet</option>
+          <option value="acres">Acres</option>
+        </select>
+      </div>
+    </div>
+    
+    <button (click)="convert()" class="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full focus:outline-none focus:ring focus:border-blue-400">
+      Convert
+    </button>
+    
+    <div *ngIf="result !== undefined" class="mt-8">
+      <p class="font-semibold text-blue-700">Result:</p>
+      <h5 class="  ">{{ inputValue }} {{ selectedFromUnit }} is equal to {{ result | number: '1.2-2' }} {{ selectedToUnit }}</h5>
     </div>
   </div>
   

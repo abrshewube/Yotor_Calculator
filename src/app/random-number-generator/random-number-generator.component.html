@@ -1,0 +1,29 @@
+<div class="p-4" style="background: linear-gradient(45deg, #FF6B6B, #FFE66D, #45B649, #22A6B3, #886AEA, #FF9A8B, #FFD54F, #63C7B2, #4A90E2, #A28FE0);">
+  <h2 class="text-2xl font-bold mb-4">Random Number Generator</h2>
+  <div class="mb-4">
+    <label class="block mb-2">Min Range:</label>
+    <input
+      type="number"
+      [(ngModel)]="minRange"
+      class="w-20 p-2 border rounded"
+    />
+  </div>
+  <div class="mb-4">
+    <label class="block mb-2">Max Range:</label>
+    <input
+      type="number"
+      [(ngModel)]="maxRange"
+      class="w-20 p-2 border rounded"
+    />
+  </div>
+  <button
+    class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition-colors duration-300"
+    (click)="generateRandomNumber()"
+  >
+    Generate Random Number
+  </button>
+  <div *ngIf="randomNum !== 0" class="mt-4">
+    <p class="font-bold">Random Number:</p>
+    <p>{{ randomNum | number: '1.2-2' }}</p>
+  </div>
+</div>

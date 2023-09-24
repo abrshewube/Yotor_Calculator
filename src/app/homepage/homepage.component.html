@@ -1,0 +1,484 @@
+<!-- header.component.html -->
+
+<header class="bg-gray-900 text-white">
+  <nav class="container mx-auto flex items-center justify-between py-4">
+    <a href="#" class="font-bold text-2xl md:text-xl">Calculator Website</a>
+
+    <!-- Hamburger Menu -->
+    <div class="md:hidden">
+      <button
+        class="text-white hover:text-gray-300 focus:outline-none"
+        (click)="toggleMobileMenu()"
+      >
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <ul class="hidden md:flex space-x-4">
+      <li class="relative group" (click)="toggleDropdown('mathematics')">
+        <a  class="hover:text-gray-300">Mathematics</a>
+        <i
+          [ngClass]="{ 'transform rotate-180': isDropdownOpen['mathematics'] }"
+          class="fas fa-chevron-down ml-1 cursor-pointer"
+        ></i>
+        <ul
+          class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+          [ngClass]="{ hidden: !isDropdownOpen['mathematics'] }"
+        >
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/derivative">Derivative Calculator</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/descrpitive">Descriptive Statistics Calculator</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/determinant">Determinant Calculator</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/inverse">Inverse of Determinat Calculator</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/integral">Integral Calculator</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/permutation">Permutation Calculator</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/combination">Combination Calculator</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="relative group" (click)="toggleDropdown('engineering')">
+        <a href="#" class="hover:text-gray-300">Engineering</a>
+        <i
+          [ngClass]="{ 'transform rotate-180': isDropdownOpen['engineering'] }"
+          class="fas fa-chevron-down ml-1 cursor-pointer"
+        ></i>
+        <ul
+          class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+          [ngClass]="{ hidden: !isDropdownOpen['engineering'] }"
+        >
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/beam">Beam Calculator</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/column">Column Calculator</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/hydrology">Hydrology Calculator</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/rwc">Retaining Wall Calculator</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/slope">Slope Stability Calculator</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/calculator/strm">Stormwater Runoff Calculator</a>
+          </li>
+        </ul>
+      </li>
+      <li class="relative group" (click)="toggleDropdown('measurement')">
+        <a class="hover:text-gray-300">Measurement</a>
+        <i
+          [ngClass]="{ 'transform rotate-180': isDropdownOpen['measurement'] }"
+          class="fas fa-chevron-down ml-1 cursor-pointer"
+        ></i>
+        <ul
+          class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+          [ngClass]="{ hidden: !isDropdownOpen['measurement'] }"
+        >
+          <li class="border-b border-gray-300 py-2">
+            <a href="/area-conversion">Area Conversion</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/converter">Converter</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/length-conversion">Length Conversion</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/temperature-conversion">Temperature Conversion</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/time-conversion">Time Conversion</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/weight-conversion">Weight Conversion</a>
+          </li>
+          <li class="border-b border-gray-300 py-2">
+            <a href="/volume-conversion">Volume Conversion</a>
+          </li>
+        </ul>
+      </li>
+
+            <!-- Add similar code for other categories -->
+
+            <li class="relative group" (click)="toggleDropdown('computerScience')">
+              <a class="hover:text-gray-300">Computer Science</a>
+              <i
+                [ngClass]="{
+                  'transform rotate-180': isDropdownOpen['computerScience']
+                }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['computerScience'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/bitwise-calculator">Bitwise Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/random-number-generator">Random Number Generator</a>
+                </li>
+                <!-- Add other computer science calculators here -->
+              </ul>
+            </li>
+      
+            <li class="relative group" (click)="toggleDropdown('businessFinance')">
+              <a class="hover:text-gray-300">Business/Finance</a>
+              <i
+                [ngClass]="{
+                  'transform rotate-180': isDropdownOpen['businessFinance']
+                }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['businessFinance'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/break-even-calculator">Break-Even Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/investment-return-calculator"
+                    >Investment Return Calculator</a
+                  >
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/loan-amortization-calculator"
+                    >Loan Amortization Calculator</a
+                  >
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/loan-calculator">Loan Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/npv-calculator">NPV Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/payroll-calculator">Payroll Calculator</a>
+                </li>
+                <!-- Add other business/finance calculators here -->
+              </ul>
+            </li>
+      
+            <li class="relative group" (click)="toggleDropdown('chemistry')">
+              <a class="hover:text-gray-300">Chemistry</a>
+              <i
+                [ngClass]="{ 'transform rotate-180': isDropdownOpen['chemistry'] }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['chemistry'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/molar-mass-calculator">Molar Mass Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/ph-calculator">pH Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/poh-calculator">pOH Calculator</a>
+                </li>
+                <!-- Add other chemistry calculators here -->
+              </ul>
+            </li>
+      
+            <li class="relative group" (click)="toggleDropdown('economics')">
+              <a href="#" class="hover:text-gray-300">Economics</a>
+              <i
+                [ngClass]="{ 'transform rotate-180': isDropdownOpen['economics'] }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['economics'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/gdp-calculator">GDP Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/inflation-calculator">Inflation Calculator</a>
+                </li>
+                <!-- Add other economics calculators here -->
+              </ul>
+            </li>
+      
+            <li class="relative group" (click)="toggleDropdown('education')">
+              <a href="#" class="hover:text-gray-300">Education</a>
+              <i
+                [ngClass]="{ 'transform rotate-180': isDropdownOpen['education'] }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['education'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/gpa-calculator">GPA Calculator</a>
+                </li>
+                <!-- Add other education calculators here -->
+              </ul>
+            </li>
+      
+            <li class="relative group" (click)="toggleDropdown('other')">
+              <a class="hover:text-gray-300">Other</a>
+              <i
+                [ngClass]="{ 'transform rotate-180': isDropdownOpen['other'] }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['other'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/word-count-calculator">Word Count</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/character-count-calculator">Character Count</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/pregnancy-due-date-calculator">Pregnancy </a>
+                </li>
+                <!-- Add other chemistry calculators here -->
+              </ul>
+            </li>
+
+      <!-- Add similar code for other categories -->
+    </ul>
+  </nav>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div
+    class="md:hidden bg-gray-900 text-white"
+    [ngClass]="{ 'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }"
+  >
+    <ul class="py-2 px-4">
+      <li class="relative group" (click)="toggleDropdown('mathematics')">
+        <a href="#" class="hover:text-gray-300">Mathematics</a>
+        <i
+          [ngClass]="{ 'transform rotate-180': isDropdownOpen['mathematics'] }"
+          class="fas fa-chevron-down ml-1 cursor-pointer"
+        ></i>
+        <ul
+          class="mt-2"
+          [ngClass]="{ hidden: !isDropdownOpen['mathematics'] }"
+        >
+          <li class="py-2">
+            <a href="/calculator/derivative">Derivative Calculator</a>
+          </li>
+          <li class="py-2">
+            <a href="/calculator/descrpitive">Descriptive Statistics Calculator</a>
+          </li>
+          <li class="py-2">
+            <a href="/calculator/determinant">Determinant Calculator</a>
+          </li>
+          <li class="py-2">
+            <a href="/calculator/inverse">Inverse of Determinat Calculator</a>
+          </li>
+          <li class="py-2">
+            <a href="/calculator/integral">Integral Calculator</a>
+          </li>
+          <li class="py-2">
+            <a href="/calculator/permutation">Permutation Calculator</a>
+          </li>
+          <li class="py-2">
+            <a href="/calculator/combination">Combination Calculator</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="relative group" (click)="toggleDropdown('engineering')">
+        <a href="#" class="hover:text-gray-300">Engineering</a>
+        <i
+          [ngClass]="{ 'transform rotate-180': isDropdownOpen['engineering'] }"
+          class="fas fa-chevron-down ml-1 cursor-pointer"
+        ></i>
+        <ul
+          class="mt-2"
+          [ngClass]="{ hidden: !isDropdownOpen['engineering'] }"
+        >
+          <li class="py-2">
+            <a href="/calculator/beam">Beam Calculator</a>
+          </li>
+          <li class="py-2">
+            <a href="/calculator/column">Column Calculator</a>
+          </li>
+          <li class="py-2">
+            <a href="/calculator/hydrology">Hydrology Calculator</a>
+          </li>
+          <li class="py-2">
+            <a href="/calculator/rwc">Retaining Wall Calculator</a>
+          </li>
+          <li class="py-2">
+            <a href="/calculator/slope">Slope Stability Calculator</a>
+          </li>
+          <li class="py-2">
+            <a href="/calculator/strm">Stormwater Runoff Calculator</a>
+          </li>
+        </ul>
+      </li>
+
+            <!-- Add similar code for other categories -->
+
+            <li class="relative group" (click)="toggleDropdown('computerScience')">
+              <a class="hover:text-gray-300">Computer Science</a>
+              <i
+                [ngClass]="{
+                  'transform rotate-180': isDropdownOpen['computerScience']
+                }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['computerScience'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/bitwise-calculator">Bitwise Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/random-number-generator">Random Number Generator</a>
+                </li>
+                <!-- Add other computer science calculators here -->
+              </ul>
+            </li>
+      
+            <li class="relative group" (click)="toggleDropdown('businessFinance')">
+              <a class="hover:text-gray-300">Business/Finance</a>
+              <i
+                [ngClass]="{
+                  'transform rotate-180': isDropdownOpen['businessFinance']
+                }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['businessFinance'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/break-even-calculator">Break-Even Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/investment-return-calculator"
+                    >Investment Return Calculator</a
+                  >
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/loan-amortization-calculator"
+                    >Loan Amortization Calculator</a
+                  >
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/loan-calculator">Loan Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/npv-calculator">NPV Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/payroll-calculator">Payroll Calculator</a>
+                </li>
+                <!-- Add other business/finance calculators here -->
+              </ul>
+            </li>
+      
+            <li class="relative group" (click)="toggleDropdown('chemistry')">
+              <a class="hover:text-gray-300">Chemistry</a>
+              <i
+                [ngClass]="{ 'transform rotate-180': isDropdownOpen['chemistry'] }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['chemistry'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/molar-mass-calculator">Molar Mass Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/ph-calculator">pH Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/poh-calculator">pOH Calculator</a>
+                </li>
+                <!-- Add other chemistry calculators here -->
+              </ul>
+            </li>
+      
+            <li class="relative group" (click)="toggleDropdown('economics')">
+              <a href="#" class="hover:text-gray-300">Economics</a>
+              <i
+                [ngClass]="{ 'transform rotate-180': isDropdownOpen['economics'] }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['economics'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/gdp-calculator">GDP Calculator</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/inflation-calculator">Inflation Calculator</a>
+                </li>
+                <!-- Add other economics calculators here -->
+              </ul>
+            </li>
+      
+            <li class="relative group" (click)="toggleDropdown('education')">
+              <a href="#" class="hover:text-gray-300">Education</a>
+              <i
+                [ngClass]="{ 'transform rotate-180': isDropdownOpen['education'] }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['education'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/gpa-calculator">GPA Calculator</a>
+                </li>
+                <!-- Add other education calculators here -->
+              </ul>
+            </li>
+      
+            <li class="relative group" (click)="toggleDropdown('other')">
+              <a class="hover:text-gray-300">Other</a>
+              <i
+                [ngClass]="{ 'transform rotate-180': isDropdownOpen['other'] }"
+                class="fas fa-chevron-down ml-1 cursor-pointer"
+              ></i>
+              <ul
+                class="absolute left-0 mt-2 py-2 bg-white text-gray-900 rounded-lg shadow-lg"
+                [ngClass]="{ hidden: !isDropdownOpen['other'] }"
+              >
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/word-count-calculator">Word Count</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/character-count-calculator">Character Count</a>
+                </li>
+                <li class="border-b border-gray-300 py-2">
+                  <a href="/pregnancy-due-date-calculator">Pregnancy </a>
+                </li>
+                <!-- Add other chemistry calculators here -->
+              </ul>
+            </li>
+
+      <!-- Add similar code for other categories -->
+    </ul>
+  </div>
+</header>

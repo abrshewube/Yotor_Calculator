@@ -1,18 +1,41 @@
-<!-- derivative-calculator.component.html -->
-<div class="container mx-auto py-4">
-    <h2 class="text-2xl font-semibold">Derivative Calculator</h2>
-    <div class="my-4">
-      <label for="expression" class="block font-medium">Enter the expression:</label>
-      <input [(ngModel)]="expression" type="text" id="expression" class="border border-gray-400 px-4 py-2 rounded w-80">
+<!-- 
+   <div class="container mx-auto mt-8 p-4 bg-blue-100 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Derivative Calculator</h2>
+    <div class="mb-4">
+      <label for="expression" class="block text-lg font-medium text-gray-700 mb-2">Enter the expression:</label>
+      <input [(ngModel)]="expression" type="text" id="expression" class="w-80 p-3 bg-white text-gray-800 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="Enter the expression">
     </div>
-    <div class="my-4">
-      <label for="variable" class="block font-medium">Enter the variable:</label>
-      <input [(ngModel)]="variable" type="text" id="variable" class="border border-gray-400 px-4 py-2 rounded w-40">
+    <div class="mb-4">
+      <label for="variable" class="block text-lg font-medium text-gray-700 mb-2">Enter the variable:</label>
+      <input [(ngModel)]="variable" type="text" id="variable" class="w-40 p-3 bg-white text-gray-800 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="Enter the variable">
     </div>
-    <button (click)="calculateDerivative()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate Derivative</button>
-    <div class="mt-4" *ngIf="result !== null">
-      <p class="font-semibold">Result:</p>
-      <p>{{ result }}</p>
+    <button (click)="calculateDerivative()" class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-md shadow-md">
+      Calculate Derivative
+    </button>
+    <div *ngIf="result !== null" class="mt-4">
+      <p class="text-lg font-semibold mb-2">Result:</p>
+      <p class="bg-gray-100 p-3 rounded-md">{{ result }}</p>
     </div>
-  </div>
+  </div> -->
   
+
+   <!-- derivative-calculator.component.html -->
+
+<div class="container mx-auto mt-8 p-4 bg-blue-100 rounded-lg shadow-lg">
+  <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Derivative Calculator</h2>
+  <div class="mb-4">
+    <label for="expression" class="block text-lg font-medium text-gray-700 mb-2">Enter the expression:</label>
+    <input [(ngModel)]="expression" type="text" id="expression" class="w-80 p-3 bg-white text-gray-800 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="Enter the expression (e.g., x^2 + sin(x))">
+  </div>
+  <div class="mb-4">
+    <label for="variable" class="block text-lg font-medium text-gray-700 mb-2">Enter the variable:</label>
+    <input [(ngModel)]="variable" type="text" id="variable" class="w-40 p-3 bg-white text-gray-800 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="Enter the variable (e.g., x)">
+  </div>
+  <button (click)="calculateDerivative()" class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-md shadow-md">
+    Calculate Derivative
+  </button>
+  <div *ngIf="result !== null" class="mt-4">
+    <p class="text-lg font-semibold mb-2">Result:</p>
+    <p class="bg-gray-100 p-3 rounded-md">{{ result }}</p>
+  </div>
+</div>

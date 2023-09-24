@@ -1,1 +1,37 @@
-<p>subnet-calculator works!</p>
+<h2 class="text-2xl font-bold mb-4">Subnet Calculator</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <!-- Input for IP Address -->
+  <div>
+    <label class="block mb-2">Enter IP Address (Decimal):</label>
+    <input type="text" [(ngModel)]="ipDecimal" class="w-full p-2 mb-2" placeholder="e.g., 192.168.1.1">
+  </div>
+
+  <!-- Input for Subnet Mask -->
+  <div>
+    <label class="block mb-2">Enter Subnet Mask (Decimal):</label>
+    <input type="text" [(ngModel)]="subnetDecimal" class="w-full p-2 mb-2" placeholder="e.g., 255.255.255.0">
+  </div>
+</div>
+
+<button (click)="calculate()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Calculate Subnets</button>
+
+<div *ngIf="subnets.length > 0" class="mt-4">
+  <h3 class="text-xl font-bold mb-2">Subnets:</h3>
+  <table class="table-auto">
+    <thead>
+      <tr>
+        <th class="px-4 py-2">Network Address</th>
+        <th class="px-4 py-2">Broadcast Address</th>
+        <th class="px-4 py-2">Usable Hosts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subnet of subnets">
+        <td class="border px-4 py-2">{{ subnet.networkAddress }}</td>
+        <td class="border px-4 py-2">{{ subnet.broadcastAddress }}</td>
+        <td class="border px-4 py-2">{{ subnet.hosts }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

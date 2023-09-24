@@ -1,46 +1,47 @@
-<div class="container mx-auto max-w-md mt-10">
-    <h2 class="text-2xl font-bold mb-4">Loan Calculator</h2>
-  
-    <div>
-      <label for="principal" class="block">Principal Amount:</label>
-      <input
-        type="number"
-        id="principal"
-        [(ngModel)]="principal"
-        class="w-full px-3 py-2 border rounded"
-        placeholder="Enter the principal amount"
-      />
-    </div>
-  
-    <div>
-      <label for="interestRate" class="block mt-4">Interest Rate (% per annum):</label>
-      <input
-        type="number"
-        id="interestRate"
-        [(ngModel)]="interestRate"
-        class="w-full px-3 py-2 border rounded"
-        placeholder="Enter the interest rate"
-      />
-    </div>
-  
-    <div>
-      <label for="loanTerm" class="block mt-4">Loan Term (years):</label>
-      <input
-        type="number"
-        id="loanTerm"
-        [(ngModel)]="loanTerm"
-        class="w-full px-3 py-2 border rounded"
-        placeholder="Enter the loan term"
-      />
-    </div>
-  
-    <div class="mt-6">
-      <button (click)="calculateMonthlyPayment()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Calculate Monthly Payment</button>
-      <button (click)="resetResults()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Reset</button>
-    </div>
-  
-    <div class="mt-6">
-      <p *ngIf="monthlyPayment !== null">Monthly Payment: {{ monthlyPayment | currency }}</p>
-    </div>
+<div class="container mx-auto max-w-md mt-10 p-4 bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600 text-white rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold mb-4">Loan Calculator</h2>
+
+  <div>
+    <label for="principal" class="block">Principal Amount:</label>
+    <input
+      type="number"
+      id="principal"
+      [(ngModel)]="principal"
+      class="w-full px-3 py-2 text-gray-900 border rounded focus:outline-none focus:ring focus:border-blue-300"
+      placeholder="Enter the principal amount"
+    />
   </div>
-  
+
+  <div>
+    <label for="interestRate" class="block mt-4">Interest Rate (% per annum):</label>
+    <input
+      type="number"
+      id="interestRate"
+      [(ngModel)]="interestRate"
+      class="w-full px-3 py-2 text-gray-900 border rounded focus:outline-none focus:ring focus:border-blue-300"
+      placeholder="Enter the interest rate"
+    />
+  </div>
+
+  <div>
+    <label for="loanTerm" class="block mt-4">Loan Term (years):</label>
+    <input
+      type="number"
+      id="loanTerm"
+      [(ngModel)]="loanTerm"
+      class="w-full px-3 py-2 text-gray-900 border rounded focus:outline-none focus:ring focus:border-blue-300"
+      placeholder="Enter the loan term"
+    />
+  </div>
+
+  <div class="mt-6">
+    
+  <button (click)="calculateMonthlyPayment()" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-blue-600 transition duration-300 transform hover:scale-105">Calculate Monthly Payment</button>
+   <br/><br/>
+  <button (click)="resetResults()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-300 transform hover:scale-105">Reset</button>
+  </div>
+
+  <div class="mt-6">
+    <p *ngIf="monthlyPayment !== null" class="font-bold">Monthly Payment: {{ monthlyPayment | currency }}</p>
+  </div>
+</div>

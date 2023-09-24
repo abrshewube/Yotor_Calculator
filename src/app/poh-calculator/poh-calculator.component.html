@@ -1,12 +1,18 @@
-
 <div class="container mx-auto mt-4">
-    <h2 class="text-2xl font-bold mb-2">pOH Calculator</h2>
-    <label class="block mb-2">Enter [OH-] (in scientific notation):</label>
-    <input type="text" [(ngModel)]="hydroxideConcentration" class="w-40 p-2 mb-2" placeholder="e.g. 1e-5">
-    <button (click)="calculatePOH()" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Calculate pOH</button>
+  <h2 class="text-3xl font-bold mb-4">pOH Calculator</h2>
+  <div class="bg-gradient-to-r from-red-300 via-red-500 to-red-300 rounded-lg shadow-md p-6">
+    <label for="hydroxideConcentration" class="block text-lg font-medium mb-2">Enter [OH-] (in scientific notation):</label>
+    <input
+      type="text"
+      [(ngModel)]="hydroxideConcentration"
+      class="w-40 p-2 mb-2 border rounded focus:outline-none focus:ring focus:border-red-500"
+      placeholder="e.g. 1e-5"
+    />
+    <br><br>
+    <button (click)="calculatePOH()" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded transition-colors duration-300">Calculate pOH</button>
     <div *ngIf="pohValue !== undefined" class="mt-4">
-      <p class="font-bold">Result:</p>
-      <p>pOH: {{ pohValue | number: '1.2-2' }}</p>
+      <p class="text-2xl font-bold">Result:</p>
+      <p class="text-2xl">pOH: {{ pohValue | number: '1.2-2' }}</p>
     </div>
   </div>
-  
+</div>

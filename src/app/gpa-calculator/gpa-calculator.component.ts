@@ -16,8 +16,13 @@ export class GpaCalculatorComponent {
   gpa: number | null = null;
 
   grades = [
+    { name: 'A+', value: 4 },
     { name: 'A', value: 4 },
+    { name: 'A-', value: 3.75 },
+    { name: 'B+', value: 3.5 },
     { name: 'B', value: 3 },
+    { name: 'B-', value: 2.75 },
+    { name: 'C+', value: 2.5 },
     { name: 'C', value: 2 },
     { name: 'D', value: 1 },
     { name: 'F', value: 0 },

@@ -1,0 +1,229 @@
+<p>scientific-calculator works!</p>
+<div class="p-4">
+    <h2 class="text-2xl font-bold mb-4">Scientific Calculator</h2>
+    
+   <!-- scientific-calculator.component.html -->
+
+<div class="p-4">
+    <div class="bg-gray-200 rounded-lg p-4">
+      <input
+        type="text"
+        class="w-full px-3 py-2 mb-4 text-gray-800 border rounded-lg"
+        [(ngModel)]="expression"
+      />
+      <div class="grid grid-cols-5 gap-2 mt-4">
+        <!-- Digits 0-9 -->
+        <button
+          class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded"
+          (click)="addDigit('7')"
+        >
+          7
+        </button>
+        <!-- Add buttons for 0-9, operators, and trig functions -->
+        <button
+          class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded"
+          (click)="addDigit('8')"
+        >
+          8
+        </button>
+        <button
+          class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded"
+          (click)="addDigit('9')"
+        >
+          9
+        </button>
+        <button
+          class="bg-yellow-300 hover:bg-yellow-400 text-yellow-700 py-2 px-4 rounded"
+          (click)="addOperator('+')"
+        >
+          +
+        </button>
+        <button
+          class="bg-yellow-300 hover:bg-yellow-400 text-yellow-700 py-2 px-4 rounded"
+          (click)="addDigit('4')"
+        >
+          4
+        </button>
+        <button
+          class="bg-yellow-300 hover:bg-yellow-400 text-yellow-700 py-2 px-4 rounded"
+          (click)="addDigit('5')"
+        >
+          5
+        </button>
+        <button
+          class="bg-yellow-300 hover:bg-yellow-400 text-yellow-700 py-2 px-4 rounded"
+          (click)="addDigit('6')"
+        >
+          6
+        </button>
+        <button
+          class="bg-red-300 hover:bg-red-400 text-red-700 py-2 px-4 rounded"
+          (click)="addOperator('-')"
+        >
+          -
+        </button>
+        <button
+          class="bg-red-300 hover:bg-red-400 text-red-700 py-2 px-4 rounded"
+          (click)="addDigit('1')"
+        >
+          1
+        </button>
+        <button
+          class="bg-red-300 hover:bg-red-400 text-red-700 py-2 px-4 rounded"
+          (click)="addDigit('2')"
+        >
+          2
+        </button>
+        <button
+          class="bg-red-300 hover:bg-red-400 text-red-700 py-2 px-4 rounded"
+          (click)="addDigit('3')"
+        >
+          3
+        </button>
+        <button
+          class="bg-green-300 hover:bg-green-400 text-green-700 py-2 px-4 rounded"
+          (click)="addOperator('*')"
+        >
+          *
+        </button>
+        <button
+          class="bg-green-300 hover:bg-green-400 text-green-700 py-2 px-4 rounded"
+          (click)="addOperator('/')"
+        >
+          /
+        </button>
+        <button
+          class="bg-blue-300 hover:bg-blue-400 text-blue-700 py-2 px-4 rounded"
+          (click)="addTrigFunction('sin')"
+        >
+          sin
+        </button>
+        <button
+          class="bg-blue-300 hover:bg-blue-400 text-blue-700 py-2 px-4 rounded"
+          (click)="addTrigFunction('cos')"
+        >
+          cos
+        </button>
+        <button
+          class="bg-blue-300 hover:bg-blue-400 text-blue-700 py-2 px-4 rounded"
+          (click)="addTrigFunction('tan')"
+        >
+          tan
+        </button>
+
+        <button
+        class="bg-red-300 hover:bg-red-400 text-red-700 py-2 px-4 rounded"
+        (click)="addSquareRoot()"
+      >
+        √
+      </button>
+      <button
+        class="bg-red-300 hover:bg-red-400 text-red-700 py-2 px-4 rounded"
+        (click)="addSquare()"
+      >
+        x²
+      </button>
+      <button
+        class="bg-red-300 hover:bg-red-400 text-red-700 py-2 px-4 rounded"
+        (click)="addCubeRoot()"
+      >
+        ³√
+      </button>
+      <button
+        class="bg-red-300 hover:bg-red-400 text-red-700 py-2 px-4 rounded"
+        (click)="addCube()"
+      >
+        x³
+      </button>
+      <button
+        class="bg-red-300 hover:bg-red-400 text-red-700 py-2 px-4 rounded"
+        (click)="addExponentiation()"
+      >
+        ^
+      </button>
+      <button
+        class="bg-red-300 hover:bg-red-400 text-red-700 py-2 px-4 rounded"
+        (click)="addLogarithm()"
+      >
+        ln
+      </button>
+
+      <button
+        class="bg-blue-300 hover:bg-red-400 text-black-700 py-2 px-4 rounded"
+        (click)="addDecimal()"
+      >
+       .
+      </button>
+      <button
+        class="bg-blue-300 hover:bg-red-400 text-black-700 py-2 px-4 rounded"
+        (click)="addParenthesesOpen()"
+      >
+       (
+      </button>
+      <button
+        class="bg-blue-300 hover:bg-red-400 text-black-700 py-2 px-4 rounded"
+        (click)="addParenthesesClose"
+      >
+       )
+      </button>
+      <button
+        class="bg-red-300 hover:bg-red-400 text-black-700 py-2 px-4 rounded"
+        (click)="addPi()"
+      >
+      π
+      </button>
+      <button
+        class="bg-blue-300 hover:bg-red-400 text-black-700 py-2 px-4 rounded"
+        (click)="  addExponential()"
+      >
+      a^x
+      </button>
+      <button
+        class="bg-yellow-300 hover:bg-red-400 text-black-700 py-2 px-4 rounded"
+        (click)="addFactorial()"
+      >
+      !
+      </button>
+      <button
+        class="bg-red-300 hover:bg-red-400 text-black-700 py-2 px-4 rounded"
+        (click)="addModulus()"
+      >
+      %
+      </button>
+      <button
+        class="bg-red-300 hover:bg-red-400 text-black-700 py-2 px-4 rounded"
+        (click)="addArcsin()"
+      >
+      asin
+      </button>
+      <button
+        class="bg-red-300 hover:bg-red-400 text-black-700 py-2 px-4 rounded"
+        (click)="addArccos()"
+      >
+      acos
+      </button>
+      <button
+        class="bg-red-300 hover:bg-red-400 text-black-700 py-2 px-4 rounded"
+        (click)="addArctan()"
+      >
+      atan
+      </button>
+
+      <button
+      class="bg-blue-300 hover:bg-red-400 text-black-700 py-2 px-4 rounded"
+      (click)="addAbsoluteValue()"
+    >
+    | |
+    </button>
+        <button
+          class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded"
+          (click)="calculate()"
+        >
+          =
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  
